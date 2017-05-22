@@ -81,7 +81,21 @@ public:
 		}
 	}
 
-	void insert(Iterator i, T value);
+	void insert(Iterator i, T value)
+	{
+			ListNode<T> * node = this->begin();
+			for (int i = 0; i < value; i++)
+			{
+				node = node->next;
+			}
+			//Insert value in t next value
+			node->next->prev = new ListNode<T>();//new node and set the next nodes previous to it
+			node->next->prev->data = value;//new nodes data
+			node->next->prev->next = node->next;//Set new nodes next to old next
+			node->next = node->next->prev;//Current node point to new 
+			node->next->prev = node;//set new nodes previous to current
+									//SHOULD WORK TEST//
+	}
 
 	Iterator begin() { return Iterator(m_first); }
 	Iterator end() { return Iterator(nullptr); }//?
