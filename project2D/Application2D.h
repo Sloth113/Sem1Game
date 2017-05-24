@@ -3,6 +3,9 @@
 #include "Application.h"
 #include "Renderer2D.h"
 #include "Audio.h"
+//My files
+#include "MathLibDLL.h"
+
 
 class Application2D : public aie::Application {
 public:
@@ -26,4 +29,6 @@ protected:
 
 	float m_cameraX, m_cameraY;
 	float m_timer;
+
+	MathDLL::Vector3 v3;
 };

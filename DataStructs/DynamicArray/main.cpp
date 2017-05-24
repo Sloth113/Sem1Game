@@ -4,6 +4,10 @@
 #include "Stack.h"
 #include "Queue.h"
 
+#include <chrono>
+
+void bubbleSort(int * const ar, int size);
+
 int main()
 {
 	//Arrays
@@ -52,7 +56,7 @@ int main()
 	}
 	std::cout << '\n';
 	list.pushFront(4);
-	
+
 	list.pushFront(6);
 	std::cout << "Count:" << list.count() << std::endl;
 	list.pushBack(10);
@@ -62,7 +66,7 @@ int main()
 	list.insert(it, 23);//insert after 3rd
 	it--;
 	std::cout << *it << std::endl;
-	list.erase(it);//remember to reset it, it doesnt exist any more 
+	list.erase(it);//remember to reset it, it doesnt exist any more
 	it = list.begin();
 	it++;
 	it++;
@@ -110,7 +114,7 @@ int main()
 	}
 	std::cout << std::endl;
 	*/
-	
+	/*
 	Queue<int> q = Queue<int>();
 	q.push(1);
 	q.push(2);
@@ -121,9 +125,57 @@ int main()
 	std::cout << q.pop() << std::endl;
 	std::cout << q.pop() << std::endl;
 	std::cout << q.top() << std::endl;
-	
+	*/
+
+
+	const int size = 100;
+	int * values = new int[size];
+	srand(time(nullptr));
+
+	for (int i = 0; i < size; i++)
+	{
+		values[i] = rand() % size;
+	}
+	for (int i = 0; i < size; i++)
+	{
+		std::cout << values[i] << ",";
+	}
+
+	std::cout << std::endl << std::endl;
+
+	std::chrono::high_resolution_clock::time_point t1, t2;
+	t1 = std::chrono::high_resolution_clock::now();
+	bubbleSort(values, size);
+	t2 = std::chrono::high_resolution_clock::now();
+
+	for (int i = 0; i < size; i++)
+	{
+		std::cout << values[i] << ",";
+	}
+	std::cout << std::endl << std::endl;
+	std::cout << "Bubble sort took " << (t2 - t1).count() << " nanoseconds." << std::endl;
+
+	delete[] values;
+
+
 	std::cin.get();
 	std::cin.ignore();
 	std::cin.get();
 	return 0;
+}
+
+void bubbleSort(int * const ar, int size)
+{
+	for(int i = size -1; i > 0; i-- )
+	{
+		for (int j = 0; j < i ; j++)
+		{
+			if (ar[j] > ar[j + 1])
+			{
+				int tmp = ar[j];
+				ar[j] = ar[j + 1];
+				ar[j + 1] = tmp;
+			}
+		}
+	}
 }

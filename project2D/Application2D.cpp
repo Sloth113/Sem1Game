@@ -35,6 +35,8 @@ bool Application2D::startup()
 	m_cameraX = 0;
 	m_cameraY = 0;
 	m_timer = 0;
+
+	v3 = MathDLL::Vector3(1, 2, 3);
 	
 	return true;
 }
@@ -116,7 +118,7 @@ void Application2D::draw()
 
 	// output some text, uses the last used colour
 	char fps[32];
-	sprintf_s(fps, 32, "FPS: %i", getFPS());
+	sprintf_s(fps, 32, "TEST: %f", v3.y);
 	m_2dRenderer->drawText(m_font, fps, 0, 720 - 32);
 	m_2dRenderer->drawText(m_font, "Press Space for sound!", 0, 720 - 64);
 
