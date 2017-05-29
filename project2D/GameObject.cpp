@@ -8,6 +8,8 @@ GameObject::GameObject(aie::Texture * texture, FiniteStateMachine * fsm) :m_text
 
 void GameObject::update(float deltaTime)
 {
+	if(m_fsm != nullptr)
+		m_fsm->update(this, deltaTime);
 	SceneObject::update(deltaTime);
 }
 

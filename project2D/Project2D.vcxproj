@@ -95,23 +95,32 @@
   <ItemGroup>
     <ClCompile Include="Application2D.cpp" />
     <ClCompile Include="AxisABBox.cpp" />
-    <ClCompile Include="FiniteStateMachine.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Rays.cpp" />
     <ClCompile Include="RoundThings.cpp" />
     <ClCompile Include="SceneObject.cpp" />
     <ClCompile Include="SpriteObject.cpp" />
+    <ClCompile Include="TestObj.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application2D.h" />
     <ClInclude Include="AxisABBox.h" />
+    <ClInclude Include="defines.h" />
     <ClInclude Include="FiniteStateMachine.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GameState.h" />
+    <ClInclude Include="GameStateManager.h" />
+    <ClInclude Include="InGameState.h" />
+    <ClInclude Include="LevelSelState.h" />
+    <ClInclude Include="MenuState.h" />
+    <ClInclude Include="PauseState.h" />
     <ClInclude Include="Rays.h" />
     <ClInclude Include="RoundThings.h" />
     <ClInclude Include="SceneObject.h" />
+    <ClInclude Include="SplashState.h" />
     <ClInclude Include="SpriteObject.h" />
+    <ClInclude Include="TestObj.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

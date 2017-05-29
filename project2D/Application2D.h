@@ -5,6 +5,13 @@
 #include "Audio.h"
 //My files
 #include "MathLibDLL.h"
+#include "GameStateManager.h"
+#include "InGameState.h"
+#include "LevelSelState.h"
+#include "MenuState.h"
+#include "SplashState.h"
+#include "PauseState.h"
+#include "defines.h"
 
 
 class Application2D : public aie::Application {
@@ -31,4 +38,8 @@ protected:
 	float m_timer;
 
 	MathDLL::Vector3 v3;
+
+	GameStateManager gameStateMan;
+
+
 };

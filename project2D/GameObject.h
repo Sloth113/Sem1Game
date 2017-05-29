@@ -1,6 +1,7 @@
 #pragma once
 #include "SpriteObject.h"
-class FiniteStateMachine;
+
+#include "FiniteStateMachine.h"
 
 class GameObject :public SpriteObject
 {
@@ -15,5 +16,5 @@ protected:
 private:
 	float m_var;
 	Vector3 m_vel;
-	FiniteStateMachine * m_fsm;
+	FiniteStateMachine * m_fsm = nullptr;
 };

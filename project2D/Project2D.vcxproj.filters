@@ -19,6 +19,18 @@
     <Filter Include="Source Files\GameStuff">
       <UniqueIdentifier>{a0cc126a-3eb5-4b67-a9d6-e4b9615be4f2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Objects">
+      <UniqueIdentifier>{3979c8ba-8d19-49bb-bca0-486db035e43b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Objects">
+      <UniqueIdentifier>{bb4cb4a1-d0c2-4c35-bc25-8ad09fdd7cc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\StateStuff">
+      <UniqueIdentifier>{fdcc910e-062a-4e63-bce8-263e6c3d71cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\StateStuff">
+      <UniqueIdentifier>{748552d4-472d-467e-8a25-0043dfcd4ae1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application2D.cpp">
@@ -42,11 +54,11 @@
     <ClCompile Include="SpriteObject.cpp">
       <Filter>Source Files\GameStuff</Filter>
     </ClCompile>
-    <ClCompile Include="FiniteStateMachine.cpp">
-      <Filter>Source Files\GameStuff</Filter>
-    </ClCompile>
     <ClCompile Include="GameObject.cpp">
       <Filter>Source Files\GameStuff</Filter>
+    </ClCompile>
+    <ClCompile Include="TestObj.cpp">
+      <Filter>Source Files\Objects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +85,33 @@
     </ClInclude>
     <ClInclude Include="GameObject.h">
       <Filter>Header Files\GameStuff</Filter>
+    </ClInclude>
+    <ClInclude Include="TestObj.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>Header Files\GameStuff</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStateManager.h">
+      <Filter>Header Files\GameStuff</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuState.h">
+      <Filter>Header Files\StateStuff</Filter>
+    </ClInclude>
+    <ClInclude Include="SplashState.h">
+      <Filter>Header Files\StateStuff</Filter>
+    </ClInclude>
+    <ClInclude Include="defines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelSelState.h">
+      <Filter>Header Files\StateStuff</Filter>
+    </ClInclude>
+    <ClInclude Include="PauseState.h">
+      <Filter>Header Files\StateStuff</Filter>
+    </ClInclude>
+    <ClInclude Include="InGameState.h">
+      <Filter>Header Files\StateStuff</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,14 +2,7 @@
 #include "Texture.h"
 #include "Font.h"
 #include "Input.h"
-enum gameState
-{
-	menu,
-	options,
-	playing,
-	pause,
-	gameOver
-};
+
 Application2D::Application2D()
 {
 
@@ -38,6 +31,21 @@ bool Application2D::startup()
 
 	v3 = MathDLL::Vector3(1, 2, 3);
 	
+	gameStateMan = GameStateManager((int)eGameState::STATE_COUNT);
+	
+
+	gameStateMan.registerState((int)eGameState::SPLASH, new SplashState(m_font, &gameStateMan));
+	gameStateMan.registerState((int)eGameState::MENU, new MenuState(m_font, &gameStateMan));
+	gameStateMan.registerState((int)eGameState::LEVELSEL, new LevelSelState(m_font, &gameStateMan));
+	gameStateMan.registerState((int)eGameState::INGAME, new InGameState(m_font, &gameStateMan));
+	gameStateMan.registerState((int)eGameState::PAUSE, new PauseState(m_font, &gameStateMan));
+
+
+
+	gameStateMan.pushState((int)eGameState::SPLASH);
+	std::cout << gameStateMan.activeStateCount();
+
+
 	return true;
 }
 
@@ -59,26 +67,13 @@ void Application2D::update(float deltaTime)
 	// input example
 	aie::Input* input = aie::Input::getInstance();
 
-	// use arrow keys to move camera
-	if (input->isKeyDown(aie::INPUT_KEY_UP))
-		m_cameraY += 500.0f * deltaTime;
+	//if (gameStateMan.activeStateCount() > 0)
+	//{
+		gameStateMan.update(deltaTime);
+		//std::cout << "SOMETHING PLS";
+	//}
 
-	if (input->isKeyDown(aie::INPUT_KEY_DOWN))
-		m_cameraY -= 500.0f * deltaTime;
 
-	if (input->isKeyDown(aie::INPUT_KEY_LEFT))
-		m_cameraX -= 500.0f * deltaTime;
-
-	if (input->isKeyDown(aie::INPUT_KEY_RIGHT))
-		m_cameraX += 500.0f * deltaTime;
-
-	// example of audio
-	if (input->wasKeyPressed(aie::INPUT_KEY_SPACE))
-		m_audio->play();
-
-	// exit the application
-	if (input->isKeyDown(aie::INPUT_KEY_ESCAPE))
-		quit();
 }
 
 void Application2D::draw()
@@ -87,12 +82,16 @@ void Application2D::draw()
 	// wipe the screen to the background colour
 	clearScreen();
 
+
 	// set the camera position before we begin rendering
 	m_2dRenderer->setCameraPos(m_cameraX, m_cameraY);
 
 	// begin drawing sprites
 	m_2dRenderer->begin();
+	//if (gameStateMan.activeStateCount() > 0)
+		gameStateMan.draw(m_2dRenderer);
 
+	/*
 	// demonstrate animation
 	m_2dRenderer->setUVRect(int(m_timer) % 8 / 8.0f, 0, 1.f / 8, 1.f / 8);
 	m_2dRenderer->drawSprite(m_texture, 200, 200, 100, 100);
@@ -121,7 +120,7 @@ void Application2D::draw()
 	sprintf_s(fps, 32, "TEST: %f", v3.y);
 	m_2dRenderer->drawText(m_font, fps, 0, 720 - 32);
 	m_2dRenderer->drawText(m_font, "Press Space for sound!", 0, 720 - 64);
-
+	*/
 	// done drawing sprites
 	m_2dRenderer->end();
 }
