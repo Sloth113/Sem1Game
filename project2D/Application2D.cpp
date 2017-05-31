@@ -43,7 +43,14 @@ bool Application2D::startup()
 
 
 	gameStateMan.pushState((int)eGameState::SPLASH);
-	std::cout << gameStateMan.activeStateCount();
+	
+	std::shared_ptr<Resource<aie::Texture>> pText = m_textures.get("./textures/ship.png");
+	m_testObj1 = new ResourceTestObj(pText);
+
+	std::cout << "Textures loaded " << m_textures.getCount() << std::endl;
+
+
+
 
 
 	return true;
@@ -52,11 +59,21 @@ bool Application2D::startup()
 void Application2D::shutdown()
 {
 
+
+	std::cout << "Textures loaded " << m_textures.getCount() << std::endl;
+
+	delete m_testObj1;
+
+	m_textures.collectGarbage();
+	std::cout << "Textures loaded " << m_textures.getCount() << std::endl;
+
 	delete m_audio;
 	delete m_font;
 	delete m_texture;
 	delete m_shipTexture;
 	delete m_2dRenderer;
+
+
 }
 
 void Application2D::update(float deltaTime)

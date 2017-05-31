@@ -31,6 +31,9 @@
     <Filter Include="Header Files\StateStuff">
       <UniqueIdentifier>{748552d4-472d-467e-8a25-0043dfcd4ae1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Resource Manager">
+      <UniqueIdentifier>{b3f0c07a-c1aa-4a57-b384-9fd3c9f6191c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application2D.cpp">
@@ -112,6 +115,15 @@
     </ClInclude>
     <ClInclude Include="InGameState.h">
       <Filter>Header Files\StateStuff</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files\Resource Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>Header Files\Resource Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceTestObj.h">
+      <Filter>Header Files\Resource Manager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

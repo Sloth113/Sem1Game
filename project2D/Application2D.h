@@ -4,14 +4,21 @@
 #include "Renderer2D.h"
 #include "Audio.h"
 //My files
+//Math lib
 #include "MathLibDLL.h"
+// Global vars
+#include "defines.h"
+//States
 #include "GameStateManager.h"
 #include "InGameState.h"
 #include "LevelSelState.h"
 #include "MenuState.h"
 #include "SplashState.h"
 #include "PauseState.h"
-#include "defines.h"
+//Resource stuff
+#include "ResourceManager.h"
+#include "ResourceTestObj.h"
+
 
 
 class Application2D : public aie::Application {
@@ -40,6 +47,10 @@ protected:
 	MathDLL::Vector3 v3;
 
 	GameStateManager gameStateMan;
+
+	ResourceManager<aie::Texture> m_textures;
+	ResourceTestObj * m_testObj1;
+
 
 
 };

@@ -61,6 +61,7 @@ protected:
 		renderer->drawText(m_fontType, "Level 2", 0, SCREEN_HEIGHT - 120, 0);
 		renderer->drawText(m_fontType, "Level 3", 0, SCREEN_HEIGHT - 160, 0);
 		renderer->drawText(m_fontType, "Back", 0, 40, 0);
+		//Select icon / line
 		switch(m_sel)
 		{
 			case (int)levelSel::LEVELONE:
@@ -85,7 +86,8 @@ private:
 	aie::Font * m_fontType;
 	enum class levelSel
 	{
-		LEVELONE,		LEVELTWO,
+		LEVELONE,
+		LEVELTWO,
 		LEVELTHREE,
 		BACK,
 		SIZE

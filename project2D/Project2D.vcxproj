@@ -116,6 +116,9 @@
     <ClInclude Include="MenuState.h" />
     <ClInclude Include="PauseState.h" />
     <ClInclude Include="Rays.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="ResourceManager.h" />
+    <ClInclude Include="ResourceTestObj.h" />
     <ClInclude Include="RoundThings.h" />
     <ClInclude Include="SceneObject.h" />
     <ClInclude Include="SplashState.h" />

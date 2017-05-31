@@ -19,7 +19,7 @@ protected:
 	}
 	virtual void onDraw(aie::Renderer2D * renderer)
 	{
-		renderer->drawText(m_fontType, "Paused", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 0);
+		renderer->drawText(m_fontType, "Paused.... forever ", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 0);
 	}
 
 
