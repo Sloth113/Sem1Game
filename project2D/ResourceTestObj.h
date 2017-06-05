@@ -5,10 +5,10 @@
 class ResourceTestObj
 {
 public:
-	ResourceTestObj(std::shared_ptr<Resource<aie::Texture>> texture) : m_text(texture) {};
+	ResourceTestObj(aie::Texture * texture) : m_text(texture) {};
 	~ResourceTestObj() {};
 
 private:
-	std::shared_ptr<Resource<aie::Texture>> m_text;
+	aie::Texture *  m_text;
 
 };

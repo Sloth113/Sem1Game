@@ -98,8 +98,12 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Rays.cpp" />
+    <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="RoundThings.cpp" />
     <ClCompile Include="SceneObject.cpp" />
+    <ClCompile Include="Snack.cpp" />
+    <ClCompile Include="SnackFactory.cpp" />
+    <ClCompile Include="SnackThing.cpp" />
     <ClCompile Include="SpriteObject.cpp" />
     <ClCompile Include="TestObj.cpp" />
   </ItemGroup>
@@ -112,15 +116,20 @@
     <ClInclude Include="GameState.h" />
     <ClInclude Include="GameStateManager.h" />
     <ClInclude Include="InGameState.h" />
+    <ClInclude Include="IPrototype.h" />
     <ClInclude Include="LevelSelState.h" />
     <ClInclude Include="MenuState.h" />
     <ClInclude Include="PauseState.h" />
     <ClInclude Include="Rays.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="ResourceBase.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="ResourceTestObj.h" />
     <ClInclude Include="RoundThings.h" />
     <ClInclude Include="SceneObject.h" />
+    <ClInclude Include="Snack.h" />
+    <ClInclude Include="SnackFactory.h" />
+    <ClInclude Include="SnackThing.h" />
     <ClInclude Include="SplashState.h" />
     <ClInclude Include="SpriteObject.h" />
     <ClInclude Include="TestObj.h" />

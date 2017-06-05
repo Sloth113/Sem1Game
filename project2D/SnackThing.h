@@ -18,14 +18,18 @@
 //Resource stuff
 #include "ResourceManager.h"
 #include "ResourceTestObj.h"
+//SNACKFACT
+#include "SnackFactory.h"
+#include "Snack.h"
+#include <list>
+#include <time.h>
 
-
-
-class Application2D : public aie::Application {
+class SnackThing : public aie::Application
+{
 public:
 
-	Application2D();
-	virtual ~Application2D();
+	SnackThing();
+	virtual ~SnackThing();
 
 	virtual bool startup();
 	virtual void shutdown();
@@ -44,15 +48,8 @@ protected:
 	float m_cameraX, m_cameraY;
 	float m_timer;
 
-	MathDLL::Vector3 v3;
-
-	GameStateManager gameStateMan;
-
-	//ResourceManager<aie::Texture> m_textures;
-
-	std::shared_ptr<ResourceBase> m_textureTest;
-	ResourceTestObj * m_testObj1;
-
+	std::unique_ptr<SnackFactory> m_snackFactory;
+	std::list < std::shared_ptr<Snack>> m_snacks;
 
 
 };

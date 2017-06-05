@@ -1,11 +1,44 @@
 #pragma once
 #include "Resource.h"
+#include "Texture.h"
+#include "Font.h"
+#include "Audio.h"
 #include <vector>
 
+
+class ResourceManager
+{
+private:
+
+	std::vector<std::shared_ptr<ResourceBase>>m_resources;
+
+	ResourceManager() {};
+	ResourceManager(const ResourceManager&) {};
+	ResourceManager& operator=(const ResourceManager&) {};
+
+public:
+	enum ResourceType
+	{
+		TEXTURE = 0,
+		FONT,
+		AUDIO
+	};
+	static ResourceManager& getInstance();
+	~ResourceManager() {};
+	std::shared_ptr<ResourceBase> get(const std::string filename, ResourceType type);
+	void collectGarbage();
+	int getCount();
+
+
+};
+
+
+/*  //pre-singlton tute
 template<class T>
 class ResourceManager
 {
 public:
+	
 	ResourceManager() {}
 	~ResourceManager() {}
 
@@ -47,3 +80,4 @@ private:
 	ResourceManager& operator=(const ResourceManager&) {};
 
 };
+*/

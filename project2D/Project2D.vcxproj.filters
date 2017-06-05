@@ -34,6 +34,15 @@
     <Filter Include="Header Files\Resource Manager">
       <UniqueIdentifier>{b3f0c07a-c1aa-4a57-b384-9fd3c9f6191c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Resource Manager">
+      <UniqueIdentifier>{59a1a8aa-b20d-482d-a8ec-eabf3b56b701}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TutorialObjs">
+      <UniqueIdentifier>{056518e3-8297-4f78-b0a3-b9b2731abae3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TutorialObjs">
+      <UniqueIdentifier>{9cdd0e43-22a6-4666-b64b-6c9bd9ea33ae}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application2D.cpp">
@@ -62,6 +71,18 @@
     </ClCompile>
     <ClCompile Include="TestObj.cpp">
       <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager.cpp">
+      <Filter>Source Files\Resource Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="SnackThing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Snack.cpp">
+      <Filter>Source Files\TutorialObjs</Filter>
+    </ClCompile>
+    <ClCompile Include="SnackFactory.cpp">
+      <Filter>Source Files\TutorialObjs</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +145,21 @@
     </ClInclude>
     <ClInclude Include="ResourceTestObj.h">
       <Filter>Header Files\Resource Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceBase.h">
+      <Filter>Header Files\Resource Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="SnackThing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IPrototype.h">
+      <Filter>Header Files\TutorialObjs</Filter>
+    </ClInclude>
+    <ClInclude Include="Snack.h">
+      <Filter>Header Files\TutorialObjs</Filter>
+    </ClInclude>
+    <ClInclude Include="SnackFactory.h">
+      <Filter>Header Files\TutorialObjs</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
