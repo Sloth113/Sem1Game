@@ -3,11 +3,13 @@
 
 class LevelSelState : public GameState
 {
+	friend class InGameState;
 public:
-	LevelSelState(aie::Font * font, GameStateManager * manager)
+	LevelSelState(aie::Font * font, GameStateManager * manager, InGameState * game)
 	{
 		m_fontType = font;
 		p_manager = manager;
+		m_game = game;
 		m_sel = (int)levelSel::LEVELONE;
 	}
 protected:
@@ -33,14 +35,17 @@ protected:
 			case (int)levelSel::LEVELONE:
 				p_manager->popState();
 				p_manager->pushState((int)eGameState::INGAME);
+				m_game->setLevel(1);
 				break;
 			case (int)levelSel::LEVELTWO:
 				p_manager->popState();
 				p_manager->pushState((int)eGameState::INGAME);
+				m_game->setLevel(2);
 				break;
 			case (int)levelSel::LEVELTHREE:
 				p_manager->popState();
 				p_manager->pushState((int)eGameState::INGAME);
+				m_game->setLevel(3);
 				break;
 			case (int)levelSel::BACK:
 				p_manager->popState();
@@ -79,9 +84,6 @@ protected:
 		}
 	}
 
-
-
-
 private:
 	aie::Font * m_fontType;
 	enum class levelSel
@@ -93,4 +95,5 @@ private:
 		SIZE
 	};
 	int m_sel;
+	InGameState *  m_game;
 };

@@ -32,7 +32,11 @@ public:
 		ListNode<T> * m_node = nullptr;
 	};
 
-	LinkedList() { m_first = nullptr; m_last = nullptr; }
+	LinkedList() 
+	{
+		m_first = nullptr; 
+		m_last = nullptr; 
+	}
 	~LinkedList()
 	{
 		this->clear();
@@ -133,7 +137,6 @@ public:
 
 	void erase(Iterator it)
 	{
-		
 		ListNode<T> * node = m_first;
 		for (Iterator i = this->begin(); i != it; i++)
 			node = node->next;
@@ -152,7 +155,6 @@ public:
 			node->prev->next = node->next;
 			delete node;
 		}
-
 	}
 	void remove(T value)
 	{
@@ -204,7 +206,6 @@ public:
 			delete (m_last->next); //delete data
 			m_last->next = nullptr; //set pointer
 			return value;
-
 		}
 	}
 	T popFront()
@@ -225,7 +226,6 @@ public:
 			m_first->prev = nullptr;
 			return value;
 		}
-		
 	}
 
 	bool empty()
@@ -243,13 +243,14 @@ public:
 		m_last = nullptr;
 	}
 
-	bool isEmpty() { return begin() == end(); }
+	bool isEmpty() 
+	{ 
+		return begin() == end(); 
+	}
 
 	//void remove(predicate); pass in condition
-
-
+	
 private:
 	ListNode<T>* m_first;
 	ListNode<T>* m_last;
-
 };

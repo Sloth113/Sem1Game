@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include "GameState.h"
-////////MAYBE USE STACK CLASS
+/////////////////////////stack use
 class GameStateManager
 {
 public:
@@ -39,6 +39,7 @@ public:
 			m_stateStack.back()->exit();
 			auto tmp = m_stateStack.back();
 			m_stateStack.pop_back();
+			tmp->onPopped();
 
 			if (m_stateStack.empty() == false)
 				m_stateStack.back()->enter();
@@ -63,12 +64,12 @@ public:
 
 	}
 
-	void draw(aie::Renderer2D * renderer)//Might need to add renderer
+	void draw(aie::Renderer2D * renderer)
 	{
 		for (auto state : m_stateStack)
 		{
 			if(state->isActive())
-			state->onDraw(renderer);
+				state->onDraw(renderer);
 		}
 	}
 	

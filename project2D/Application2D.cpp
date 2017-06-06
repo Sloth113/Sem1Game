@@ -36,8 +36,9 @@ bool Application2D::startup()
 
 	gameStateMan.registerState((int)eGameState::SPLASH, new SplashState(m_font, &gameStateMan));
 	gameStateMan.registerState((int)eGameState::MENU, new MenuState(m_font, &gameStateMan));
-	gameStateMan.registerState((int)eGameState::LEVELSEL, new LevelSelState(m_font, &gameStateMan));
-	gameStateMan.registerState((int)eGameState::INGAME, new InGameState(m_font, &gameStateMan));
+	InGameState * inGame = new InGameState(m_font, &gameStateMan);//SO YOU CAN SELECT LEVEl
+	gameStateMan.registerState((int)eGameState::INGAME, inGame);
+	gameStateMan.registerState((int)eGameState::LEVELSEL, new LevelSelState(m_font, &gameStateMan, inGame));
 	gameStateMan.registerState((int)eGameState::PAUSE, new PauseState(m_font, &gameStateMan));
 
 
@@ -71,8 +72,6 @@ void Application2D::shutdown()
 	delete m_texture;
 	delete m_shipTexture;
 	delete m_2dRenderer;
-
-
 }
 
 void Application2D::update(float deltaTime)
