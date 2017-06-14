@@ -55,8 +55,8 @@ bool Application2D::startup()
 	std::cout << "Textures loaded " << ResourceManager::getInstance().getCount() << std::endl;
 
 
-
-
+	
+	gameStateMan.update(0);
 
 	return true;
 }
@@ -65,7 +65,7 @@ void Application2D::shutdown()
 {
 	delete m_testObj1;
 
-	ResourceManager::getInstance().collectGarbage();
+	ResourceManager::getInstance().collectGarbage();//SHOULD USE THIS TO CLEAN UP AFTER GAME IS DONE DOING STUFF USE CLEAR OR DELETE HERE TO GET RID OF ALL.. ALSO CHANGE BACK TO == 1 not >.. THIS SHOULD COLLECT NOT USED NOT CLEAR ALL OR SOMETHING JUST KEEP TYPEING HERRE UNTIL ITS ANNOYING TO SCROLL N SHIT WORDS...
 
 	delete m_audio;
 	delete m_font;
@@ -82,12 +82,13 @@ void Application2D::update(float deltaTime)
 	// input example
 	aie::Input* input = aie::Input::getInstance();
 
-	//if (gameStateMan.activeStateCount() > 0)
-	//{
+	if (gameStateMan.activeStateCount() > 0)
+		//{
 		gameStateMan.update(deltaTime);
-		//std::cout << "SOMETHING PLS";
-	//}
-
+	//std::cout << "SOMETHING PLS";
+//}
+	else
+		quit();
 
 }
 

@@ -34,6 +34,10 @@ protected:
 			p_manager->pushState((int)eGameState::LEVELSEL);
 			//p_manager->popState();
 		}
+		else if (input->wasKeyPressed(aie::INPUT_KEY_ESCAPE)) {
+			p_manager->popState();//QUIT 
+		}
+
 		
 	}
 	virtual void onDraw(aie::Renderer2D * renderer) 

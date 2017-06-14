@@ -146,6 +146,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="catch.hpp" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="DynArray.h" />
     <ClInclude Include="Queue.h" />
