@@ -57,10 +57,7 @@ DynArray<T>::DynArray()
 	m_array = new T[10];
 	m_size = 10;
 	m_used = 0;
-	for (int i = 0; i < m_size; i++)
-	{
-		m_array[i] = NULL;
-	}
+
 }
 
 template<typename T>
@@ -70,10 +67,7 @@ DynArray<T>::DynArray(int size)
 	m_array = new T[size];
 	m_size = size;
 	m_used = 0;
-	for (int i = 0; i < m_size; i++)
-	{
-		m_array[i] = NULL;
-	}
+
 }
 
 template<typename T>
