@@ -119,6 +119,7 @@
     <ClInclude Include="IPrototype.h" />
     <ClInclude Include="LevelSelState.h" />
     <ClInclude Include="MenuState.h" />
+    <ClInclude Include="ObjectPool.h" />
     <ClInclude Include="PauseState.h" />
     <ClInclude Include="Rays.h" />
     <ClInclude Include="Resource.h" />

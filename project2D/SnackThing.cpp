@@ -3,6 +3,7 @@
 #include "Font.h"
 #include "Input.h"
 
+
 SnackThing::SnackThing()
 {
 
@@ -42,6 +43,10 @@ bool SnackThing::startup()
 	m_snackFactory->addPrototype(cake);
 	m_snackFactory->addPrototype(croissant);
 
+
+	m_pool = ObjectPool<std::shared_ptr<Snack>>(20);
+	
+
 	return true;
 }
 
@@ -78,7 +83,7 @@ void SnackThing::update(float deltaTime)
 		m_snacks.push_back(snack); 
 	}
 	timer -= deltaTime;
-	
+	//Update snacks
 	for (auto it = m_snacks.begin(); it != m_snacks.end(); ) 
 	{
 		(*it)->update(deltaTime);
@@ -92,6 +97,27 @@ void SnackThing::update(float deltaTime)
 			++it;
 		}
 	}
+	if (input->wasKeyPressed(aie::INPUT_KEY_SPACE))
+	{
+		std::shared_ptr<Snack> * s = m_pool.activate();
+		if (s != nullptr)
+		{
+			(*s)->setPosition(getWindowWidth() / 2, getWindowHeight() / 2);
+			(*s)->setVelocity(1, 0);
+		}
+		else
+		{
+			std::cout << "USED ALL SNACKS" << std::endl;
+		}
+	}
+	//POOL THING
+	for (auto it = m_pool.begin(); it != m_pool.end(); it++)
+	{
+		(*(*it))->update(deltaTime);
+	}
+	
+
+
 	// exit the application 
 	if (input->isKeyDown(aie::INPUT_KEY_ESCAPE)) quit();
 }

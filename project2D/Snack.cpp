@@ -22,6 +22,7 @@ Snack::Snack(const Snack& other)
 	m_name = other.m_name;
 }
 
+
 Snack::~Snack()
 {
 	std::cout << m_name << " -1 SNACK" << std::endl;

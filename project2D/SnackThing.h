@@ -23,6 +23,8 @@
 #include "Snack.h"
 #include <list>
 #include <time.h>
+//OBJECT POOL
+#include "ObjectPool.h"
 
 class SnackThing : public aie::Application
 {
@@ -50,6 +52,8 @@ protected:
 
 	std::unique_ptr<SnackFactory> m_snackFactory;
 	std::list < std::shared_ptr<Snack>> m_snacks;
+
+	ObjectPool<std::shared_ptr<Snack>> m_pool;
 
 
 };

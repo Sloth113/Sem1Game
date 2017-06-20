@@ -161,5 +161,8 @@
     <ClInclude Include="SnackFactory.h">
       <Filter>Header Files\TutorialObjs</Filter>
     </ClInclude>
+    <ClInclude Include="ObjectPool.h">
+      <Filter>Header Files\TutorialObjs</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -93,7 +93,7 @@ template<typename T>
 T& DynArray<T>::operator=(const DynArray & arr)
 {
 
-	if (this == &arr) return *this;
+//	if (this == &arr) return *this;
 	delete[] m_array;
 
 	m_array = new T[arr.m_size];
