@@ -1,5 +1,4 @@
 #pragma once
-
 #include "Application.h"
 #include "Renderer2D.h"
 #include "Audio.h"
@@ -11,14 +10,12 @@
 //States
 #include "GameStateManager.h"
 #include "InGameState.h"
-#include "LevelSelState.h"
 #include "MenuState.h"
 #include "SplashState.h"
 #include "PauseState.h"
+#include "ScoresState.h"
 //Resource stuff
 #include "ResourceManager.h"
-#include "ResourceTestObj.h"
-
 
 
 class Application2D : public aie::Application {
@@ -36,23 +33,12 @@ public:
 protected:
 
 	aie::Renderer2D*	m_2dRenderer;
-	aie::Texture*		m_texture;
-	aie::Texture*		m_shipTexture;
 	aie::Font*			m_font;
-	aie::Audio*			m_audio;
 
 	float m_cameraX, m_cameraY;
 	float m_timer;
 
-	MathDLL::Vector3 v3;
-
 	GameStateManager gameStateMan;
 
-	//ResourceManager<aie::Texture> m_textures;
-
 	std::shared_ptr<ResourceBase> m_textureTest;
-	ResourceTestObj * m_testObj1;
-
-
-
 };

@@ -2,7 +2,7 @@
 #include <memory>
 #include <string>
 #include "ResourceBase.h"
-
+//Resource manager resource
 template<class T>
 class Resource: public ResourceBase
 {
@@ -14,10 +14,6 @@ public:
 	}
 	~Resource() {};
 
-	/*std::string getFileName()
-	{
-		return m_filename;
-	}*/
 	void* getData()
 	{
 		return m_data.get();
@@ -25,5 +21,4 @@ public:
 
 private:
 	std::unique_ptr<T> m_data;
-	//std::string m_filename;
 };

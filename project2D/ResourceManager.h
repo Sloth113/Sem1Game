@@ -4,8 +4,7 @@
 #include "Font.h"
 #include "Audio.h"
 #include <vector>
-
-
+//Resource manager singleton class
 class ResourceManager
 {
 private:
@@ -28,8 +27,6 @@ public:
 	std::shared_ptr<ResourceBase> get(const std::string filename, ResourceType type);
 	void collectGarbage();
 	int getCount();
-
-
 };
 
 

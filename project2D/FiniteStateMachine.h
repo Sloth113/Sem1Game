@@ -1,5 +1,5 @@
 #pragma once
-//#include "GameObject.h"
+//Unused
 #include <vector>
 class GameObject;
 class Condition

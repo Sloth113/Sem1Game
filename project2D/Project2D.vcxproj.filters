@@ -25,23 +25,17 @@
     <Filter Include="Header Files\Objects">
       <UniqueIdentifier>{bb4cb4a1-d0c2-4c35-bc25-8ad09fdd7cc6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\StateStuff">
-      <UniqueIdentifier>{fdcc910e-062a-4e63-bce8-263e6c3d71cb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\StateStuff">
-      <UniqueIdentifier>{748552d4-472d-467e-8a25-0043dfcd4ae1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Resource Manager">
       <UniqueIdentifier>{b3f0c07a-c1aa-4a57-b384-9fd3c9f6191c}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Resource Manager">
       <UniqueIdentifier>{59a1a8aa-b20d-482d-a8ec-eabf3b56b701}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\TutorialObjs">
-      <UniqueIdentifier>{056518e3-8297-4f78-b0a3-b9b2731abae3}</UniqueIdentifier>
+    <Filter Include="Header Files\Datastructs">
+      <UniqueIdentifier>{d4bcb076-82c1-477c-9307-54e5a5daae27}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\TutorialObjs">
-      <UniqueIdentifier>{9cdd0e43-22a6-4666-b64b-6c9bd9ea33ae}</UniqueIdentifier>
+    <Filter Include="Header Files\States">
+      <UniqueIdentifier>{748552d4-472d-467e-8a25-0043dfcd4ae1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -54,35 +48,26 @@
     <ClCompile Include="AxisABBox.cpp">
       <Filter>Source Files\GameStuff</Filter>
     </ClCompile>
-    <ClCompile Include="Rays.cpp">
-      <Filter>Source Files\GameStuff</Filter>
-    </ClCompile>
     <ClCompile Include="RoundThings.cpp">
       <Filter>Source Files\GameStuff</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneObject.cpp">
-      <Filter>Source Files\GameStuff</Filter>
-    </ClCompile>
-    <ClCompile Include="SpriteObject.cpp">
-      <Filter>Source Files\GameStuff</Filter>
-    </ClCompile>
-    <ClCompile Include="GameObject.cpp">
-      <Filter>Source Files\GameStuff</Filter>
-    </ClCompile>
-    <ClCompile Include="TestObj.cpp">
-      <Filter>Source Files\Objects</Filter>
     </ClCompile>
     <ClCompile Include="ResourceManager.cpp">
       <Filter>Source Files\Resource Manager</Filter>
     </ClCompile>
-    <ClCompile Include="SnackThing.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="RandomObj.cpp">
+      <Filter>Source Files\Objects</Filter>
     </ClCompile>
-    <ClCompile Include="Snack.cpp">
-      <Filter>Source Files\TutorialObjs</Filter>
+    <ClCompile Include="SmallObj.cpp">
+      <Filter>Source Files\Objects</Filter>
     </ClCompile>
-    <ClCompile Include="SnackFactory.cpp">
-      <Filter>Source Files\TutorialObjs</Filter>
+    <ClCompile Include="SlowObj.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="FastObj.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="FactoryPool.cpp">
+      <Filter>Source Files\GameStuff</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -92,26 +77,11 @@
     <ClInclude Include="AxisABBox.h">
       <Filter>Header Files\GameStuff</Filter>
     </ClInclude>
-    <ClInclude Include="Rays.h">
-      <Filter>Header Files\GameStuff</Filter>
-    </ClInclude>
     <ClInclude Include="RoundThings.h">
-      <Filter>Header Files\GameStuff</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneObject.h">
-      <Filter>Header Files\GameStuff</Filter>
-    </ClInclude>
-    <ClInclude Include="SpriteObject.h">
       <Filter>Header Files\GameStuff</Filter>
     </ClInclude>
     <ClInclude Include="FiniteStateMachine.h">
       <Filter>Header Files\GameStuff</Filter>
-    </ClInclude>
-    <ClInclude Include="GameObject.h">
-      <Filter>Header Files\GameStuff</Filter>
-    </ClInclude>
-    <ClInclude Include="TestObj.h">
-      <Filter>Header Files\Objects</Filter>
     </ClInclude>
     <ClInclude Include="GameState.h">
       <Filter>Header Files\GameStuff</Filter>
@@ -120,22 +90,19 @@
       <Filter>Header Files\GameStuff</Filter>
     </ClInclude>
     <ClInclude Include="MenuState.h">
-      <Filter>Header Files\StateStuff</Filter>
+      <Filter>Header Files\States</Filter>
     </ClInclude>
     <ClInclude Include="SplashState.h">
-      <Filter>Header Files\StateStuff</Filter>
+      <Filter>Header Files\States</Filter>
     </ClInclude>
     <ClInclude Include="defines.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="LevelSelState.h">
-      <Filter>Header Files\StateStuff</Filter>
-    </ClInclude>
     <ClInclude Include="PauseState.h">
-      <Filter>Header Files\StateStuff</Filter>
+      <Filter>Header Files\States</Filter>
     </ClInclude>
     <ClInclude Include="InGameState.h">
-      <Filter>Header Files\StateStuff</Filter>
+      <Filter>Header Files\States</Filter>
     </ClInclude>
     <ClInclude Include="Resource.h">
       <Filter>Header Files\Resource Manager</Filter>
@@ -143,26 +110,50 @@
     <ClInclude Include="ResourceManager.h">
       <Filter>Header Files\Resource Manager</Filter>
     </ClInclude>
-    <ClInclude Include="ResourceTestObj.h">
-      <Filter>Header Files\Resource Manager</Filter>
-    </ClInclude>
     <ClInclude Include="ResourceBase.h">
       <Filter>Header Files\Resource Manager</Filter>
     </ClInclude>
-    <ClInclude Include="SnackThing.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="ScoresState.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="catch.hpp">
+      <Filter>Header Files\Datastructs</Filter>
+    </ClInclude>
+    <ClInclude Include="DynArray.h">
+      <Filter>Header Files\Datastructs</Filter>
+    </ClInclude>
+    <ClInclude Include="Graph.h">
+      <Filter>Header Files\Datastructs</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedList.h">
+      <Filter>Header Files\Datastructs</Filter>
+    </ClInclude>
+    <ClInclude Include="Queue.h">
+      <Filter>Header Files\Datastructs</Filter>
+    </ClInclude>
+    <ClInclude Include="Stack.h">
+      <Filter>Header Files\Datastructs</Filter>
     </ClInclude>
     <ClInclude Include="IPrototype.h">
-      <Filter>Header Files\TutorialObjs</Filter>
+      <Filter>Header Files\GameStuff</Filter>
     </ClInclude>
-    <ClInclude Include="Snack.h">
-      <Filter>Header Files\TutorialObjs</Filter>
+    <ClInclude Include="FactoryPool.h">
+      <Filter>Header Files\GameStuff</Filter>
     </ClInclude>
-    <ClInclude Include="SnackFactory.h">
-      <Filter>Header Files\TutorialObjs</Filter>
+    <ClInclude Include="FastObj.h">
+      <Filter>Header Files\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="ObjectPool.h">
-      <Filter>Header Files\TutorialObjs</Filter>
+    <ClInclude Include="SlowObj.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="SmallObj.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomObj.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Header Files\Objects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

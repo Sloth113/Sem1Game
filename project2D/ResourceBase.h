@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+//Resource base
 class ResourceBase
 {
 protected:

@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include "GameState.h"
-/////////////////////////stack use
+//Manages game states
 class GameStateManager
 {
 public:
@@ -15,11 +15,12 @@ public:
 		for (auto state : m_registeredStates)
 			delete state;
 	}
-	
+	//Add state that can be used
 	void registerState(int id, GameState * state)
 	{
 		m_registeredStates[id] = state;
 	}
+	//Push onto pushedstats stack (allows for going into menus or sub menus of menus)
 	void pushState(int id)
 	{
 		m_pushedStates.push_back(m_registeredStates[id]);
@@ -28,11 +29,11 @@ public:
 	{
 		m_popState = true;
 	}
-
+	//Logic
 	void update(float deltaTime)
 	{
-		//Pop state
-		while(m_popState)
+		//Pop state, check to see if needing to pop current state. 
+		while (m_popState)
 		{
 			m_popState = false;
 
@@ -44,7 +45,7 @@ public:
 			if (m_stateStack.empty() == false)
 				m_stateStack.back()->enter();
 		}
-
+		//Push new states
 		for (auto pushedState : m_pushedStates)
 		{
 			if (m_stateStack.empty() == false)
@@ -55,24 +56,23 @@ public:
 			m_stateStack.back()->enter();
 		}
 		m_pushedStates.clear();
-
+		//Update state
 		for (auto state : m_stateStack)
 		{
-			if(state->isActive())
+			if (state->isActive())
 				state->onUpdate(deltaTime);
 		}
-
 	}
 
 	void draw(aie::Renderer2D * renderer)
 	{
+		//Draw state
 		for (auto state : m_stateStack)
 		{
-			if(state->isActive())
-				state->onDraw(renderer);
+			state->onDraw(renderer);
 		}
 	}
-	
+
 	int activeStateCount() const
 	{
 		return m_stateStack.size();

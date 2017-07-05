@@ -1,11 +1,11 @@
 #include "ResourceManager.h"
-
+//Singleton class
 ResourceManager& ResourceManager::getInstance()
 {
 	static ResourceManager instance;
 	return instance;
 }
-
+//How to get resource, checks if name exists otherwise makes the object
 std::shared_ptr<ResourceBase> ResourceManager::get(const std::string filename, ResourceType type)
 {
 	unsigned int index = 0;
@@ -44,7 +44,7 @@ std::shared_ptr<ResourceBase> ResourceManager::get(const std::string filename, R
 		return nullptr;
 	}
 }
-
+//Cleans up shared pointer use
 void ResourceManager::collectGarbage()
 {
 	for (std::vector<std::shared_ptr<ResourceBase>>::iterator it = m_resources.begin(); it != m_resources.end();)

@@ -2,6 +2,8 @@
 #include "Renderer2D.h"
 #include "Input.h"
 #include "defines.h"
+#include "ResourceManager.h"
+//Game state template for manager
 class GameState
 {
 	friend class GameStateManager;
@@ -10,7 +12,7 @@ public:
 	GameState() {};
 	GameState(GameStateManager * manager)
 	{
-		p_manager = manager;
+		m_manager = manager;
 	}
 	virtual ~GameState() {};
 	bool isActive() const { return m_active; }
@@ -38,7 +40,7 @@ protected:
 
 protected:
 
-	GameStateManager * p_manager;
+	GameStateManager * m_manager;
 	bool m_active = true;
 
 };

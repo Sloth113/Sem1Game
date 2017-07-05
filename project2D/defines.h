@@ -1,9 +1,10 @@
 #pragma once
+//Global consts and states 
 enum class eGameState
 {
 	SPLASH,
 	MENU,
-	LEVELSEL,
+	SCORES,
 	INGAME,
 	PAUSE,
 	STATE_COUNT
@@ -15,5 +16,4 @@ const int SCREEN_HEIGHT = 720;
 const int SPLASH_TIME = 3;
 const int SCREEN_DELAY = 3;
 
-const int MAX_Y_MOVE = 208;
-const int MIN_Y_MOVE = 33;
+const float GAMETIME = 15;
